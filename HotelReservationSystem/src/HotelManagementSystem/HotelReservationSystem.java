@@ -52,7 +52,7 @@ public class HotelReservationSystem {
                 MainMenu();
             }
             case 5 -> {
-                Uc10.basedOnCustomerType(HotelsList);
+                Uc11.ValidCustomerType(HotelsList);
                 MainMenu();
             }
             case 6 -> {
