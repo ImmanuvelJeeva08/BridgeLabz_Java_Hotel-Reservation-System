@@ -26,7 +26,7 @@ public class HotelReservationSystem {
         System.out.println("Hotel Reservation System\n");
         System.out.println("1 . Add a New Hotel ");
         System.out.println("2 . Find cheapest Hotel ");
-        System.out.println("3 . Find cheapest Hotel ");
+        System.out.println("3 . Find cheapest Hotel based on weekEnds and weekDays");
         System.out.println("4 . View Hotel List");
         System.out.println("5 . Exit ");
         int option = scanner.nextInt();
