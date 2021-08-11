@@ -40,6 +40,7 @@ public class HotelReservationSystem {
         HotelsList.add(BridgeWood);
 
         view();
+        Uc2.findCheapHotel(HotelsList);
 
     }
 }
