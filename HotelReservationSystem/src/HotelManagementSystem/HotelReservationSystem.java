@@ -28,8 +28,9 @@ public class HotelReservationSystem {
         System.out.println("2 . Find cheapest Hotel ");
         System.out.println("3 . Find cheapest Hotel based on weekDays and WeekEnds");
         System.out.println("4 . Find cheapest Hotel with Best Ratings");
-        System.out.println("5 . View Hotel List");
-        System.out.println("6 . Exit ");
+        System.out.println("5 . FInd Best Rated Hotels Only ");
+        System.out.println("6 . View Hotel List");
+        System.out.println("7 . Exit ");
         int option = scanner.nextInt();
 
         switch (option) {
@@ -50,11 +51,15 @@ public class HotelReservationSystem {
                 MainMenu();
             }
             case 5 -> {
+                Uc7.bestRatedHotelOnly(HotelsList);
+                MainMenu();
+            }
+            case 6 -> {
                 view();
                 MainMenu();
             }
 
-            case 6 -> System.out.println("Thank You");
+            case 7 -> System.out.println("Thank You");
             default -> System.out.println("Enter proper Input");
         }
     }
