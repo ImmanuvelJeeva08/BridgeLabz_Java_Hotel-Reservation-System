@@ -66,19 +66,22 @@ public class HotelReservationSystem {
         LakeWood.setHotelName("LakeWood");
         LakeWood.setWeekDayRate(110);
         LakeWood.setWeekEndRate(90);
+        LakeWood.setRating(3);
         HotelsList.add(LakeWood);
-
-        Hotel RidgeWood = new Hotel();
-        RidgeWood.setHotelName("RidgeWood");
-        RidgeWood.setWeekDayRate(150);
-        RidgeWood.setWeekEndRate(50);
-        HotelsList.add(RidgeWood);
 
         Hotel BridgeWood = new Hotel();
         BridgeWood.setHotelName("BridgeWood");
-        BridgeWood.setWeekDayRate(220);
-        BridgeWood.setWeekEndRate(150);
+        BridgeWood.setWeekDayRate(150);
+        BridgeWood.setWeekEndRate(50);
+        BridgeWood.setRating(4);
         HotelsList.add(BridgeWood);
+
+        Hotel RidgeWood = new Hotel();
+        RidgeWood.setHotelName("RidgeWood");
+        RidgeWood.setWeekDayRate(220);
+        RidgeWood.setWeekEndRate(150);
+        RidgeWood.setRating(5);
+        HotelsList.add(RidgeWood);
 
         MainMenu();
     }
