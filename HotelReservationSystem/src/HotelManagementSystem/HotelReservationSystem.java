@@ -11,10 +11,41 @@
 package HotelManagementSystem;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class HotelReservationSystem {
 
     static ArrayList<Hotel> HotelsList = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void MainMenu() {
+
+        System.out.println("==================================================================================");
+        System.out.println("Hotel Reservation System\n");
+        System.out.println("1 . Add a New Hotel ");
+        System.out.println("2 . Find cheapest Hotel ");
+        System.out.println("3 . View Hotel List");
+        System.out.println("4 . Exit ");
+        int option = scanner.nextInt();
+
+        switch (option) {
+            case 1 -> {
+                Uc3.addNewHotel(HotelsList);
+                MainMenu();
+            }
+            case 2 -> {
+                Uc2.findCheapHotel(HotelsList);
+                MainMenu();
+            }
+            case 3 -> {
+                view();
+                MainMenu();
+            }
+
+            case 4 -> System.out.println("Thank You");
+            default -> System.out.println("Enter proper Input");
+        }
+    }
 
     // To view total HotelList
     public static void view() {
@@ -43,8 +74,6 @@ public class HotelReservationSystem {
         BridgeWood.setWeekEndRate(150);
         HotelsList.add(BridgeWood);
 
-        view();
-        Uc2.findCheapHotel(HotelsList);
-
+        MainMenu();
     }
 }

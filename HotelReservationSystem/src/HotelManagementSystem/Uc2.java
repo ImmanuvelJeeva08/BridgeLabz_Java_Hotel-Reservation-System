@@ -56,13 +56,17 @@ public class Uc2 {
                 count1++;
             else
                 count2++;
-
         }
+        print(count1,count2,hotelsList);
+
+    }
+
+    public static void print(int count1, int count2, ArrayList<Hotel> hotelsList) {
 
         // getHotel of Minimum Per Day
         Hotel hotel = hotelsList.stream().min(Comparator.comparingInt(Hotel::getWeekDayRate)).get();
 
-        System.out.println("\nCheapest Hotel = "+hotel);
-        System.out.println("Total Rate     = "+hotel.getWeekDayRate() * (count1 +count2)) ;
+        System.out.println("\nCheapest Hotel = " + hotel);
+        System.out.println("Total Rate     = " + hotel.getWeekDayRate() * (count1 + count2));
     }
 }
