@@ -3,7 +3,8 @@ package HotelManagementSystem;
 public class Hotel {
 
     private String hotelName;
-    private int ratePerDay;
+    private int weekDayRate;
+    private int weekEndRate;
 
     public String getHotelName() {
         return hotelName;
@@ -13,19 +14,28 @@ public class Hotel {
         this.hotelName = hotelName;
     }
 
-    public int getRatePerDay() {
-        return ratePerDay;
+    public int getWeekDayRate() {
+        return weekDayRate;
     }
 
-    public void setRatePerDay(int ratePerDay) {
-        this.ratePerDay = ratePerDay;
+    public void setWeekDayRate(int weekDayRate) {
+        this.weekDayRate = weekDayRate;
+    }
+
+    public int getWeekEndRate() {
+        return weekEndRate;
+    }
+
+    public void setWeekEndRate(int weekEndRate) {
+        this.weekEndRate = weekEndRate;
     }
 
     @Override
     public String toString() {
         return "Hotel{" +
                 "hotelName='" + hotelName + '\'' +
-                ", ratePerDay=" + ratePerDay +
+                ", weekDayRate=" + weekDayRate +
+                ", weekEndRate=" + weekEndRate +
                 '}';
     }
 }

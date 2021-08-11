@@ -60,9 +60,9 @@ public class Uc2 {
         }
 
         // getHotel of Minimum Per Day
-        Hotel hotel = hotelsList.stream().min(Comparator.comparingInt(Hotel::getRatePerDay)).get();
+        Hotel hotel = hotelsList.stream().min(Comparator.comparingInt(Hotel::getWeekDayRate)).get();
 
-        System.out.println("Cheapest Hotel = "+hotel);
-        System.out.println("Total Rate     = "+hotel.getRatePerDay() * (count1 +count2)) ;
+        System.out.println("\nCheapest Hotel = "+hotel);
+        System.out.println("Total Rate     = "+hotel.getWeekDayRate() * (count1 +count2)) ;
     }
 }
