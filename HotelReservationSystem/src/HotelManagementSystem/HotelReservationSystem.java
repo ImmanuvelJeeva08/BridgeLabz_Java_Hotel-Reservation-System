@@ -24,7 +24,7 @@ public class HotelReservationSystem {
 
         System.out.println("==================================================================================");
         System.out.println("Hotel Reservation System\n");
-        System.out.println("1 . Add a New Hotel ");
+        System.out.println("1 . Add a New Hotel With customer Details");
         System.out.println("2 . Find cheapest Hotel ");
         System.out.println("3 . Find cheapest Hotel based on weekDays and WeekEnds");
         System.out.println("4 . Find cheapest Hotel with Best Ratings");
@@ -35,7 +35,7 @@ public class HotelReservationSystem {
 
         switch (option) {
             case 1 -> {
-                Uc3.addNewHotel(HotelsList);
+                Uc9.addNewHotel(HotelsList);
                 MainMenu();
             }
             case 2 -> {
@@ -74,6 +74,7 @@ public class HotelReservationSystem {
     public static void main(String[] args) {
 
         Hotel LakeWood = new Hotel();
+        LakeWood.setCustomerType(Hotel.Customer.REGULAR);
         LakeWood.setHotelName("LakeWood");
         LakeWood.setWeekDayRate(110);
         LakeWood.setWeekEndRate(90);
@@ -81,6 +82,7 @@ public class HotelReservationSystem {
         HotelsList.add(LakeWood);
 
         Hotel BridgeWood = new Hotel();
+        BridgeWood.setCustomerType(Hotel.Customer.REGULAR);
         BridgeWood.setHotelName("BridgeWood");
         BridgeWood.setWeekDayRate(150);
         BridgeWood.setWeekEndRate(50);
@@ -88,11 +90,37 @@ public class HotelReservationSystem {
         HotelsList.add(BridgeWood);
 
         Hotel RidgeWood = new Hotel();
+        RidgeWood.setCustomerType(Hotel.Customer.REGULAR);
         RidgeWood.setHotelName("RidgeWood");
         RidgeWood.setWeekDayRate(220);
         RidgeWood.setWeekEndRate(150);
         RidgeWood.setRating(5);
         HotelsList.add(RidgeWood);
+
+
+        Hotel LakeWood1 = new Hotel();
+        LakeWood1.setCustomerType(Hotel.Customer.REWORD);
+        LakeWood1.setHotelName("LakeWood");
+        LakeWood1.setWeekDayRate(80);
+        LakeWood1.setWeekEndRate(80);
+        LakeWood1.setRating(3);
+        HotelsList.add(LakeWood1);
+
+        Hotel BridgeWood1 = new Hotel();
+        BridgeWood1.setCustomerType(Hotel.Customer.REWORD);
+        BridgeWood1.setHotelName("BridgeWood");
+        BridgeWood1.setWeekDayRate(110);
+        BridgeWood1.setWeekEndRate(50);
+        BridgeWood1.setRating(4);
+        HotelsList.add(BridgeWood1);
+
+        Hotel RidgeWood1 = new Hotel();
+        RidgeWood1.setCustomerType(Hotel.Customer.REWORD);
+        RidgeWood1.setHotelName("RidgeWood");
+        RidgeWood1.setWeekDayRate(100);
+        RidgeWood1.setWeekEndRate(40);
+        RidgeWood1.setRating(5);
+        HotelsList.add(RidgeWood1);
 
         MainMenu();
     }

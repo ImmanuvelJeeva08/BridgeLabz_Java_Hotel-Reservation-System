@@ -2,10 +2,23 @@ package HotelManagementSystem;
 
 public class Hotel {
 
+    enum Customer {
+        REWORD,REGULAR
+    }
+
+    private Customer customerType;
     private String hotelName;
     private int rating;
     private int weekDayRate;
     private int weekEndRate;
+
+    public Customer getCustomerType() {
+        return customerType;
+    }
+
+    public void setCustomerType(Customer customerType) {
+        this.customerType = customerType;
+    }
 
     public String getHotelName() {
         return hotelName;
@@ -42,7 +55,8 @@ public class Hotel {
     @Override
     public String toString() {
         return "Hotel{" +
-                "hotelName='" + hotelName + '\'' +
+                "customerType=" + customerType +
+                ", hotelName='" + hotelName + '\'' +
                 ", rating=" + rating +
                 ", weekDayRate=" + weekDayRate +
                 ", weekEndRate=" + weekEndRate +
