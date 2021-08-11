@@ -16,7 +16,7 @@ import java.util.*;
 
 public class Uc11 {
 
-    public static void ValidCustomerType(ArrayList<Hotel> hotelsList){
+    public static void RewordCustomerType(ArrayList<Hotel> hotelsList){
         Scanner scanner = new Scanner(System.in);
         Hotel hotelbestRate = null;
         ArrayList<Hotel> hotels = new ArrayList<>();

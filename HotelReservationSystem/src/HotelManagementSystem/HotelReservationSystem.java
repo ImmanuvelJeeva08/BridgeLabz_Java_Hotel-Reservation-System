@@ -4,6 +4,10 @@
  *  Ability to add Hotel in a Hotel Reservation System with Name and rates for Regular Customer...
  *  Ability to add weekday and weekend rates for each Hotel - For Lakewood Weekday
  *  Ability to add ratings to each Hotel Lakewood is 3, Bridgewood is 4 and Ridgewood is 5
+ *  Ability to find the Best Rated Hotel for a given Date Range
+ *  Ability to find the cheapest best
+ *  rated hotel Hotel for a given Date Range for a Reward Customer and Regular customer using Java Streams
+ * - Use Regex Validation, Exceptions and Java 8 Date Feature
  *
  * @author : Immanuvel Jeeva
  * @Since  : 11-08-2021
@@ -29,9 +33,10 @@ public class HotelReservationSystem {
         System.out.println("3 . Find cheapest Hotel based on weekDays and WeekEnds");
         System.out.println("4 . Find cheapest Hotel with Best Ratings");
         System.out.println("5 . Find cheapest Hotel with Best Ratings for Reward Customers");
-        System.out.println("6 . FInd Best Rated Hotels Only ");
-        System.out.println("7 . View Hotel List");
-        System.out.println("8 . Exit ");
+        System.out.println("6 . Find cheapest Hotel with Best Ratings for Regular Customers");
+        System.out.println("7 . FInd Best Rated Hotels Only ");
+        System.out.println("8 . View Hotel List");
+        System.out.println("9 . Exit ");
         int option = scanner.nextInt();
 
         switch (option) {
@@ -52,19 +57,23 @@ public class HotelReservationSystem {
                 MainMenu();
             }
             case 5 -> {
-                Uc11.ValidCustomerType(HotelsList);
+                Uc11.RewordCustomerType(HotelsList);
                 MainMenu();
             }
             case 6 -> {
-                Uc7.bestRatedHotelOnly(HotelsList);
+                Uc12.RegularCustomerType(HotelsList);
                 MainMenu();
             }
             case 7 -> {
+                Uc7.bestRatedHotelOnly(HotelsList);
+                MainMenu();
+            }
+            case 8 -> {
                 view();
                 MainMenu();
             }
 
-            case 8 -> System.out.println("Thank You");
+            case 9 -> System.out.println("Thank You");
             default -> System.out.println("Enter proper Input");
         }
     }
