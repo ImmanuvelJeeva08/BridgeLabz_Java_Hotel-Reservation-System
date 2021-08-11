@@ -1,8 +1,11 @@
 /******************************************************************************************************************
  *
- *  Ability to find the cheapest best rated hotel Hotel for a given Date Range
- * - I/P – 11Sep2020, 12Sep2020
- * - O/P – Bridgewood, Rating: 4 and Total Rates: $200
+ *  Ability to find the cheapest best rated hotel Hotel for a given Date Range for a Reward Customer
+ * - Ability to validate the user inputs for Date Range and customer type
+ *
+ * - Throw Exceptions for invalid entries
+ * - I/P – 11Sep2020, 12Sep2020 UC 10
+ * - O/P – Ridgewood, Rating: 5 and Total Rates: $140
  *
  * @author : Immanuvel Jeeva
  * @Since  : 11-08-2021
@@ -13,15 +16,13 @@ package HotelManagementSystem;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-public class Uc6 {
+public class Uc10 {
+    public static void basedOnCustomerType(ArrayList<Hotel> hotelsList) throws InvalidEntryException {
 
-    public static void cheapHotelBestRate(ArrayList<Hotel> hotelsList){
-
+        Scanner scanner = new Scanner(System.in);
+        Hotel hotelbestRate = null;
         ArrayList<Hotel> hotels = new ArrayList<>();
 
         Map<Integer,String> days = new HashMap<>();
@@ -59,20 +60,34 @@ public class Uc6 {
                 count2++;
         }
 
-        System.out.println("Enter");
+        System.out.println("Enter the Customer Category");
+        System.out.println("Press 1 - Reword");
+        System.out.println("Press 2 - Regular");
+        int option = scanner.nextInt();
 
-        // getHotel of Minimum Per Day for WeekEnds and WeekDays
-        Hotel hotelcheap1 = hotelsList.stream().min(Comparator.comparingInt(Hotel::getWeekDayRate)).get();
-        Hotel hotelcheap2 = hotelsList.stream().min(Comparator.comparingInt(Hotel::getWeekEndRate)).get();
+        if(option == 1){
 
-        hotels.add(hotelcheap1);
-        hotels.add(hotelcheap2);
+            // getHotel of Minimum Per Day for WeekEnds and WeekDays
+            Hotel hotelcheap1 = hotelsList.stream().filter(x -> x.customerType == Hotel.Customer.REWORD).min(Comparator.comparingInt(Hotel::getWeekDayRate)).get();
+            Hotel hotelcheap2 = hotelsList.stream().filter(x -> x.customerType == Hotel.Customer.REWORD).max(Comparator.comparingInt(Hotel::getWeekEndRate)).get();
 
-        // Finding the BestRated hotel with cheapRate
-        Hotel hotelbestRate = hotels.stream().max(Comparator.comparingInt(Hotel::getRating)).get();
+            hotels.add(hotelcheap1);
+            hotels.add(hotelcheap2);
+
+            // Finding the BestRated hotel with cheapRate
+            hotelbestRate = hotels.stream().max(Comparator.comparingInt(Hotel::getRating)).get();
+
+        }
+        else
+            // For Invalid Entries Exception will be throwed
+            try {
+                throw new InvalidEntryException("\nYour are Regular customer . So Not allowed to access the reword customer Benifits");
+            }
+            catch (InvalidEntryException e){
+                System.out.println("Please choose correct One");
+            }
 
         System.out.println("\nCheapest Hotel = " +hotelbestRate.getHotelName());
         System.out.println("Total Rate     = " + ((hotelbestRate.getWeekDayRate() * count1) + (hotelbestRate.getWeekEndRate() * count2)));
-
     }
 }

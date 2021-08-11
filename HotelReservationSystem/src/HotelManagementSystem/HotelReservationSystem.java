@@ -20,7 +20,7 @@ public class HotelReservationSystem {
     static Scanner scanner = new Scanner(System.in);
 
     // MainMenu of Hotel Reservation System
-    public static void MainMenu() {
+    public static void MainMenu() throws Exception, InvalidEntryException {
 
         System.out.println("==================================================================================");
         System.out.println("Hotel Reservation System\n");
@@ -28,9 +28,10 @@ public class HotelReservationSystem {
         System.out.println("2 . Find cheapest Hotel ");
         System.out.println("3 . Find cheapest Hotel based on weekDays and WeekEnds");
         System.out.println("4 . Find cheapest Hotel with Best Ratings");
-        System.out.println("5 . FInd Best Rated Hotels Only ");
-        System.out.println("6 . View Hotel List");
-        System.out.println("7 . Exit ");
+        System.out.println("5 . Find cheapest Hotel with Best Ratings for Reward Customers");
+        System.out.println("6 . FInd Best Rated Hotels Only ");
+        System.out.println("7 . View Hotel List");
+        System.out.println("8 . Exit ");
         int option = scanner.nextInt();
 
         switch (option) {
@@ -51,15 +52,19 @@ public class HotelReservationSystem {
                 MainMenu();
             }
             case 5 -> {
-                Uc7.bestRatedHotelOnly(HotelsList);
+                Uc10.basedOnCustomerType(HotelsList);
                 MainMenu();
             }
             case 6 -> {
+                Uc7.bestRatedHotelOnly(HotelsList);
+                MainMenu();
+            }
+            case 7 -> {
                 view();
                 MainMenu();
             }
 
-            case 7 -> System.out.println("Thank You");
+            case 8 -> System.out.println("Thank You");
             default -> System.out.println("Enter proper Input");
         }
     }
@@ -71,7 +76,7 @@ public class HotelReservationSystem {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception, InvalidEntryException {
 
         Hotel LakeWood = new Hotel();
         LakeWood.setCustomerType(Hotel.Customer.REGULAR);

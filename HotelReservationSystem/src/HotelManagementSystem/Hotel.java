@@ -6,7 +6,7 @@ public class Hotel {
         REWORD,REGULAR
     }
 
-    private Customer customerType;
+    Customer customerType;
     private String hotelName;
     private int rating;
     private int weekDayRate;
