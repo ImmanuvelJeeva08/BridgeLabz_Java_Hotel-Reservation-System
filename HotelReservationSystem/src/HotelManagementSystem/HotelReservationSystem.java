@@ -19,6 +19,7 @@ public class HotelReservationSystem {
     static ArrayList<Hotel> HotelsList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
+    // MainMenu of Hotel Reservation System
     public static void MainMenu() {
 
         System.out.println("==================================================================================");
