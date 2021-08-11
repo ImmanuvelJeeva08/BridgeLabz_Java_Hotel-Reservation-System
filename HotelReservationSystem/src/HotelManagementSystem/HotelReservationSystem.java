@@ -24,8 +24,9 @@ public class HotelReservationSystem {
         System.out.println("Hotel Reservation System\n");
         System.out.println("1 . Add a New Hotel ");
         System.out.println("2 . Find cheapest Hotel ");
-        System.out.println("3 . View Hotel List");
-        System.out.println("4 . Exit ");
+        System.out.println("3 . Find cheapest Hotel ");
+        System.out.println("4 . View Hotel List");
+        System.out.println("5 . Exit ");
         int option = scanner.nextInt();
 
         switch (option) {
@@ -38,11 +39,15 @@ public class HotelReservationSystem {
                 MainMenu();
             }
             case 3 -> {
+                Uc4.FindCheapestHotel(HotelsList);
+                MainMenu();
+            }
+            case 4 -> {
                 view();
                 MainMenu();
             }
 
-            case 4 -> System.out.println("Thank You");
+            case 5 -> System.out.println("Thank You");
             default -> System.out.println("Enter proper Input");
         }
     }
