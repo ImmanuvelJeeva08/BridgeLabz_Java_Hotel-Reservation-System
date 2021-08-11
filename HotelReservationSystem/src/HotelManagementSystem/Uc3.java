@@ -21,6 +21,10 @@ public class Uc3 {
         String hotelName = scanner.next();
         hotel.setHotelName(hotelName);
 
+        System.out.println("Enter Rating of the Hotel");
+        int rate = scanner.nextInt();
+        hotel.setRating(rate);
+
         System.out.println("Enter Rate in WeekDays");
         int weekDays = scanner.nextInt();
         hotel.setWeekDayRate(weekDays);

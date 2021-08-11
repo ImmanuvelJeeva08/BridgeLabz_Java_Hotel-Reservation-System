@@ -3,6 +3,7 @@
  *  Start with Displaying Welcome to Hotel Reservation Program in HotelReservation class
  *  Ability to add Hotel in a Hotel Reservation System with Name and rates for Regular Customer...
  *  Ability to add weekday and weekend rates for each Hotel - For Lakewood Weekday
+ *  Ability to add ratings to each Hotel Lakewood is 3, Bridgewood is 4 and Ridgewood is 5
  *
  * @author : Immanuvel Jeeva
  * @Since  : 11-08-2021
